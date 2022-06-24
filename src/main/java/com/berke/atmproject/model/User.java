@@ -25,6 +25,9 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    @OneToMany(mappedBy = "user")
+    private Collection<Account> accounts;
+
     @ManyToMany
     @JoinTable(
             name = "users_roles",
