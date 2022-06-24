@@ -1,5 +1,7 @@
 package com.berke.atmproject.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Collection;
 
@@ -15,6 +17,7 @@ public class Role {
     @Column(name = "name")
     private String name;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "roles")
     private Collection<User> users;
 
@@ -28,4 +31,36 @@ public class Role {
     )
     private Collection<Privilege> privileges;
 
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Collection<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Collection<User> users) {
+        this.users = users;
+    }
+
+    public Collection<Privilege> getPrivileges() {
+        return privileges;
+    }
+
+    public void setPrivileges(Collection<Privilege> privileges) {
+        this.privileges = privileges;
+    }
 }
