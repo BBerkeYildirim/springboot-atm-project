@@ -1,6 +1,7 @@
 package com.berke.atmproject.api;
 
 import com.berke.atmproject.dto.UserDto;
+import com.berke.atmproject.model.User;
 import com.berke.atmproject.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,17 +19,17 @@ public class UserController {
 
 
     @GetMapping
-    public List<UserDto> findAllUsers(){
+    public List<User> findAllUsers(){
         return userService.findAllUsers();
     }
 
     @PostMapping
-    public UserDto addUser(@RequestBody UserDto userDto){
-        return userService.addUser(userDto);
+    public User addUser(@RequestBody User user){
+        return userService.addUser(user);
     }
 
     @GetMapping("/{id}")
-    public UserDto findUserById(@PathVariable int id){
+    public User findUserById(@PathVariable int id){
         return userService.findUserById(id);
     }
 }

@@ -4,6 +4,7 @@ import com.berke.atmproject.model.User;
 
 public class AccountDto {
 
+    //Dtolar baştan yapılacak
     private String type;
     private double balance;
     private User user;

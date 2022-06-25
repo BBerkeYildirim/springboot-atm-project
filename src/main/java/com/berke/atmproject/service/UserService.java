@@ -21,20 +21,18 @@ public class UserService {
         this.userDtoConverter = userDtoConverter;
     }
 
-    public List<UserDto> findAllUsers(){
-        return userRepository.findAll().stream().map(user -> userDtoConverter.convertToUserDto(user)).collect(Collectors.toList());
+    public List<User> findAllUsers(){
+        return userRepository.findAll();
     }
 
-    public UserDto addUser(UserDto userDto){
-        User user = userDtoConverter.convertToUser(userDto);
-        userRepository.save(user);
-        return userDto;
+    public User addUser(User user){
+        return userRepository.save(user);
     }
 
-    public UserDto findUserById(int id){
+    public User findUserById(int id){
         Optional<User> user = userRepository.findById(id);
         if(user.isPresent()){
-            return userDtoConverter.convertToUserDto(user.get());
+            return user.get();
         }
 
         else{
