@@ -5,6 +5,7 @@ import com.berke.atmproject.model.Privilege;
 import com.berke.atmproject.service.PrivilegeService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -23,7 +24,7 @@ public class PrivilegeController {
     }
 
     @PostMapping
-    public PrivilegeDto addPrivilege(@RequestBody PrivilegeDto privilegeDto){
+    public PrivilegeDto addPrivilege(@Valid @RequestBody PrivilegeDto privilegeDto){
         return privilegeService.addPrivilege(privilegeDto);
     }
 }

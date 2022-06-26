@@ -1,10 +1,13 @@
 package com.berke.atmproject.dto;
 
+import javax.validation.constraints.NotBlank;
 import java.util.Collection;
 
 public class PrivilegeDto {
 
     private int id;
+
+    @NotBlank
     private String name;
 
 

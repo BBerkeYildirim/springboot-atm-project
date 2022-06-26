@@ -5,6 +5,7 @@ import com.berke.atmproject.model.Account;
 import com.berke.atmproject.service.AccountService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -23,7 +24,7 @@ public class AccountController {
     }
 
     @PostMapping
-    public AccountDto addAccount(@RequestBody AccountDto accountDto){
+    public AccountDto addAccount(@Valid @RequestBody AccountDto accountDto){
         return accountService.addAccount(accountDto);
     }
 }

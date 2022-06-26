@@ -1,13 +1,17 @@
 package com.berke.atmproject.dto;
 
 import com.berke.atmproject.model.Privilege;
+
+import javax.validation.constraints.NotBlank;
 import java.util.Collection;
 
 public class RoleDto {
 
 
     private int id;
+    @NotBlank
     private String name;
+
     private Collection<PrivilegeDto> privileges;
 
     public RoleDto(int id, String name, Collection<PrivilegeDto> privileges) {

@@ -2,10 +2,15 @@ package com.berke.atmproject.dto;
 
 import com.berke.atmproject.model.User;
 
+import javax.validation.constraints.NotBlank;
+
 public class AccountDto {
 
 
+    @NotBlank
     private int id;
+
+    @NotBlank
     private String type;
     private double balance;
     private UserDto user;

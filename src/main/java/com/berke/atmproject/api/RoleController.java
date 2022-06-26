@@ -5,6 +5,7 @@ import com.berke.atmproject.model.Role;
 import com.berke.atmproject.service.RoleService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -23,7 +24,7 @@ public class RoleController {
     }
 
     @PostMapping
-    public RoleDto addRole(@RequestBody RoleDto roleDto){
+    public RoleDto addRole(@Valid @RequestBody RoleDto roleDto){
         return roleService.addRole(roleDto);
     }
 }

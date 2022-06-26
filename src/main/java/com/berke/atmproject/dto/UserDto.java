@@ -3,6 +3,9 @@ package com.berke.atmproject.dto;
 import com.berke.atmproject.model.Account;
 import com.berke.atmproject.model.Role;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -10,12 +13,18 @@ public class UserDto {
 
     private int id;
 
+    @NotBlank
     private String firstName;
 
+    @NotBlank
     private String lastName;
 
+    @NotBlank
+    @Email
     private String email;
 
+    @NotBlank
+    @Size(min = 8,max = 32,message = "Password must contain between 8 and 32 characters")
     private String password;
 
     private Collection<AccountDto> accounts;

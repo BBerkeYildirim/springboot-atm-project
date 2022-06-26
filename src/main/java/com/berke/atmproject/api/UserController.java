@@ -5,6 +5,7 @@ import com.berke.atmproject.model.User;
 import com.berke.atmproject.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -24,7 +25,7 @@ public class UserController {
     }
 
     @PostMapping
-    public UserDto addUser(@RequestBody UserDto userDto){
+    public UserDto addUser(@Valid @RequestBody UserDto userDto){
         return userService.addUser(userDto);
     }
 
