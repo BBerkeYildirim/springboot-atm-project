@@ -4,15 +4,25 @@ import com.berke.atmproject.model.User;
 
 public class AccountDto {
 
-    //Dtolar baştan yapılacak
+
+    private int id;
     private String type;
     private double balance;
-    private User user;
+    private UserDto user;
 
-    public AccountDto(String type, double balance, User user) {
+    public AccountDto(int id, String type, double balance, UserDto user) {
+        this.id = id;
         this.type = type;
         this.balance = balance;
         this.user = user;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getType() {
@@ -31,11 +41,11 @@ public class AccountDto {
         this.balance = balance;
     }
 
-    public User getUser() {
+    public UserDto getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(UserDto user) {
         this.user = user;
     }
 }

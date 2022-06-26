@@ -8,6 +8,8 @@ import java.util.Collection;
 
 public class UserDto {
 
+    private int id;
+
     private String firstName;
 
     private String lastName;
@@ -16,17 +18,26 @@ public class UserDto {
 
     private String password;
 
-    private Collection<Account> accounts;
+    private Collection<AccountDto> accounts;
 
-    private Collection<Role> roles;
+    private Collection<RoleDto> roles;
 
-    public UserDto(String firstName, String lastName, String email, String password, Collection<Account> accounts, Collection<Role> roles) {
+    public UserDto(int id, String firstName, String lastName, String email, String password, Collection<AccountDto> accounts, Collection<RoleDto> roles) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.accounts = accounts;
         this.roles = roles;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -61,21 +72,19 @@ public class UserDto {
         this.password = password;
     }
 
-    public Collection<Account> getAccounts() {
+    public Collection<AccountDto> getAccounts() {
         return accounts;
     }
 
-    public void setAccounts(Collection<Account> accounts) {
-        this.accounts = new ArrayList<>(accounts);
+    public void setAccounts(Collection<AccountDto> accounts) {
+        this.accounts = accounts;
     }
 
-    public Collection<Role> getRoles() {
+    public Collection<RoleDto> getRoles() {
         return roles;
     }
 
-    public void setRoles(Collection<Role> roles) {
-        this.roles = new ArrayList<>(roles);
+    public void setRoles(Collection<RoleDto> roles) {
+        this.roles = roles;
     }
-
-
 }
