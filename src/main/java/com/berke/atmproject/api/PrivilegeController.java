@@ -1,5 +1,6 @@
 package com.berke.atmproject.api;
 
+import com.berke.atmproject.dto.PrivilegeDto;
 import com.berke.atmproject.model.Privilege;
 import com.berke.atmproject.service.PrivilegeService;
 import org.springframework.web.bind.annotation.*;
@@ -17,12 +18,12 @@ public class PrivilegeController {
     }
 
     @GetMapping
-    public List<Privilege> findAllPrivileges(){
+    public List<PrivilegeDto> findAllPrivileges(){
         return privilegeService.findAllPrivileges();
     }
 
     @PostMapping
-    public Privilege addPrivilege(@RequestBody Privilege privilege){
-        return privilegeService.addPrivilege(privilege);
+    public PrivilegeDto addPrivilege(@RequestBody PrivilegeDto privilegeDto){
+        return privilegeService.addPrivilege(privilegeDto);
     }
 }

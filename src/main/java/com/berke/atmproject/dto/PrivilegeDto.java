@@ -5,15 +5,12 @@ import java.util.Collection;
 public class PrivilegeDto {
 
     private int id;
-
     private String name;
 
-    private Collection<RoleDto> roles;
 
-    public PrivilegeDto(int id, String name, Collection<RoleDto> roles) {
+    public PrivilegeDto(int id, String name) {
         this.id = id;
         this.name = name;
-        this.roles = roles;
     }
 
     public int getId() {
@@ -32,11 +29,4 @@ public class PrivilegeDto {
         this.name = name;
     }
 
-    public Collection<RoleDto> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Collection<RoleDto> roles) {
-        this.roles = roles;
-    }
 }

@@ -8,13 +8,11 @@ public class RoleDto {
 
     private int id;
     private String name;
-    private Collection<UserDto> users;
     private Collection<PrivilegeDto> privileges;
 
-    public RoleDto(int id, String name, Collection<UserDto> users, Collection<PrivilegeDto> privileges) {
+    public RoleDto(int id, String name, Collection<PrivilegeDto> privileges) {
         this.id = id;
         this.name = name;
-        this.users = users;
         this.privileges = privileges;
     }
 
@@ -35,13 +33,6 @@ public class RoleDto {
         this.name = name;
     }
 
-    public Collection<UserDto> getUsers() {
-        return users;
-    }
-
-    public void setUsers(Collection<UserDto> users) {
-        this.users = users;
-    }
 
     public Collection<PrivilegeDto> getPrivileges() {
         return privileges;

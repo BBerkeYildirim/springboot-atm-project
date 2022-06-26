@@ -1,5 +1,6 @@
 package com.berke.atmproject.api;
 
+import com.berke.atmproject.dto.AccountDto;
 import com.berke.atmproject.model.Account;
 import com.berke.atmproject.service.AccountService;
 import org.springframework.web.bind.annotation.*;
@@ -17,12 +18,12 @@ public class AccountController {
     }
 
     @GetMapping
-    public List<Account> findAllAccounts(){
+    public List<AccountDto> findAllAccounts(){
         return accountService.findAllAccounts();
     }
 
     @PostMapping
-    public Account addAccount(@RequestBody Account account){
-        return accountService.addAccount(account);
+    public AccountDto addAccount(@RequestBody AccountDto accountDto){
+        return accountService.addAccount(accountDto);
     }
 }

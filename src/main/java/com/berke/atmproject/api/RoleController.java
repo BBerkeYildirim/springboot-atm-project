@@ -1,5 +1,6 @@
 package com.berke.atmproject.api;
 
+import com.berke.atmproject.dto.RoleDto;
 import com.berke.atmproject.model.Role;
 import com.berke.atmproject.service.RoleService;
 import org.springframework.web.bind.annotation.*;
@@ -17,12 +18,12 @@ public class RoleController {
     }
 
     @GetMapping
-    public List<Role> findAllRoles(){
+    public List<RoleDto> findAllRoles(){
         return roleService.findAllRoles();
     }
 
     @PostMapping
-    public Role addRole(@RequestBody Role role){
-        return roleService.addRole(role);
+    public RoleDto addRole(@RequestBody RoleDto roleDto){
+        return roleService.addRole(roleDto);
     }
 }

@@ -19,17 +19,17 @@ public class UserController {
 
 
     @GetMapping
-    public List<User> findAllUsers(){
+    public List<UserDto> findAllUsers(){
         return userService.findAllUsers();
     }
 
     @PostMapping
-    public User addUser(@RequestBody User user){
-        return userService.addUser(user);
+    public UserDto addUser(@RequestBody UserDto userDto){
+        return userService.addUser(userDto);
     }
 
     @GetMapping("/{id}")
-    public User findUserById(@PathVariable int id){
+    public UserDto findUserById(@PathVariable int id){
         return userService.findUserById(id);
     }
 }
